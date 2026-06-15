@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Plan</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="result-card">
+
+        <h1>
+            🌍 {{ destination }}
+        </h1>
+
+        <h2>
+            Your AI Generated Itinerary
+        </h2>
+
+        <div class="itinerary-box">
+            <pre>{{ itinerary }}</pre>
+        </div>
+
+        <a href="/download-pdf" class="download-btn">
+            Download PDF
+        </a>
+
+        <a href="/" class="back-btn">
+            Create Another Trip
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

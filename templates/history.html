@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trip History</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="result-card">
+
+        <h1>📚 Trip History</h1>
+
+        {% for trip in trips %}
+
+        <div class="trip-item">
+
+            <h3>{{ trip[1] }}</h3>
+
+            <p>
+                {{ trip[2] }} Days |
+                Budget: {{ trip[3] }}
+            </p>
+
+            <a
+            href="/trip/{{ trip[0] }}"
+            class="view-btn">
+
+            View Trip
+
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+        <a href="/" class="back-btn">
+
+            Create New Trip
+
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

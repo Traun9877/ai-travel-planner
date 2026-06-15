@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Travel Planner</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="hero">
+
+        <h1>✈️ AI Travel Planner</h1>
+
+        <p>
+            Generate personalized travel itineraries powered by Gemini AI
+        </p>
+
+    </div>
+
+    <div class="card">
+    <div class="loading" id="loading">
+    <div class="spinner"></div>
+</div>
+
+        <form action="/generate" method="POST">
+
+            <label>Destination</label>
+            <input
+                type="text"
+                name="destination"
+                placeholder="Goa, Paris, Dubai..."
+                required
+            >
+
+            <label>Number of Days</label>
+            <input
+                type="number"
+                name="days"
+                min="1"
+                required
+            >
+
+            <label>Number of Travelers</label>
+            <input
+                type="number"
+                name="travelers"
+                min="1"
+                required
+            >
+
+            <label>Traveler Type</label>
+
+            <select name="traveler_type" required>
+
+                <option value="">Select</option>
+
+                <option>Solo</option>
+
+                <option>Couple</option>
+
+                <option>Family</option>
+
+                <option>Friends Group</option>
+
+                <option>Business Trip</option>
+
+            </select>
+
+            <label>Budget</label>
+
+            <select name="budget" required>
+
+                <option value="">Select</option>
+
+                <option>Low</option>
+
+                <option>Medium</option>
+
+                <option>Luxury</option>
+
+            </select>
+
+            <label>Interests</label>
+
+            <textarea
+                name="interests"
+                rows="4"
+                placeholder="Adventure, Beaches, Food, Culture, Shopping..."
+                required
+            ></textarea>
+
+            <button type="submit">
+                Generate Itinerary
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+<a href="/history" class="history-btn">
+    View Trip History
+</a>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
